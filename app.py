@@ -441,9 +441,9 @@ st.markdown("""<div class="finding-box">
 </div>""", unsafe_allow_html=True)
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-t1, t2, t3, t4, t5 = st.tabs([
+t1, t2, t3, t4, t5, t6 = st.tabs([
     "🐾 The Shadow", "🟡 Green Gold", "📡 Transmission Signal",
-    "🔮 Scenario", "📑 Framework"
+    "🔮 Scenario", "📑 Framework", "✍️ The Essay"
 ])
 
 # ── TAB 1: THE SHADOW ─────────────────────────────────────────────────────────
@@ -864,3 +864,206 @@ dollar-invoiced import price surges. The instrument doesn't match the channel.
     st.markdown("---")
     st.caption("""Built by Anuja A. Gokhale · MA Applied Economics, NUS (Merit Scholar)
     · anujagokhale1604@gmail.com · ssrn.com/abstract=6514338 · monsoon-index.streamlit.app""")
+
+
+# ── TAB 6: THE ESSAY ─────────────────────────────────────────────────────────
+with t6:
+    st.markdown("""
+<style>
+.essay-wrap { max-width: 680px; margin: 0 auto; padding: 0 8px; }
+.essay-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+.essay-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--mid);
+    margin-bottom: 12px;
+}
+.essay-byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555555;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+}
+.essay-p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: #CCCCCC;
+    line-height: 1.85;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+.essay-pullquote {
+    border-left: 3px solid var(--pink);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: rgba(255,45,120,0.04);
+}
+.essay-pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+    margin: 0;
+}
+.essay-pullquote .pq-source {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--pink);
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+.essay-finding {
+    background: linear-gradient(135deg, #1E0A12 0%, #0D0D0D 100%);
+    border: 1px solid rgba(255,45,120,0.25);
+    border-left: 3px solid var(--pink);
+    padding: 18px 22px;
+    margin: 28px 0;
+}
+.essay-finding p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--cream);
+    line-height: 1.7;
+    margin: 0;
+}
+.essay-finding strong { color: var(--pink); }
+.essay-divider {
+    text-align: center;
+    color: var(--pink);
+    font-size: 18px;
+    margin: 32px 0;
+    letter-spacing: 8px;
+}
+</style>
+
+<div class="essay-wrap">
+
+<div class="essay-title">The Pink Panther's Inflation</div>
+<div class="essay-sub">How the Dollar Drives Global Prices From the Shadows</div>
+<div class="essay-byline">ANUJA A. GOKHALE &nbsp;·&nbsp; MA APPLIED ECONOMICS, NUS (MERIT SCHOLAR) &nbsp;·&nbsp; SSRN.COM/ABSTRACT=6514338</div>
+
+<div class="essay-pullquote">
+<p>"DXY correlation with downstream CPI consistently exceeds bilateral exchange rate correlation —
+consistent with Gopinath's Dominant Currency Paradigm. The dollar is not a bystander.
+It is the mechanism."</p>
+<div class="pq-source">DCP TEST · THIS DASHBOARD · ROLLING 24M WINDOW</div>
+</div>
+
+<div class="essay-p">
+The Pink Panther has a talent for causing chaos without anyone realising he was there.
+He bumbles through the scene, knocks everything over, and disappears — leaving investigators
+pointing fingers at everyone except the actual culprit. The US dollar has a similar gift.
+It moves through every commodity market, every trade invoice, every import contract on the planet,
+setting prices as it goes — and when inflation arrives, nobody thinks to check what the dollar
+was doing.
+</div>
+
+<div class="essay-p">
+This is not a conspiracy theory. It is the Dominant Currency Paradigm, documented by
+Gita Gopinath in a landmark 2020 paper: most international trade is invoiced in US dollars,
+regardless of whether the buyer or seller has anything to do with America. When India sells
+commodities to Singapore, the price is set in dollars. When Singapore buys electronics from
+Vietnam, again dollars. The bilateral exchange rate between the rupee and the Singapore dollar
+barely matters. What matters is each country's relationship with the dollar — and the dollar's
+relationship with global commodity prices.
+</div>
+
+<div class="essay-finding">
+<p><strong>The empirical test:</strong> If DCP holds, the dollar index (DXY) should predict
+downstream CPI more reliably than bilateral exchange rates (Producer Currency Pricing, PCP).
+This dashboard runs that test. Rolling 24-month correlation: DXY → Singapore CPI =
+<strong>{avg_corr_sg:.2f}</strong> vs SGD/USD → Singapore CPI = <strong>{avg_bilateral_sg:.2f}</strong>.
+DXY → UK CPI = <strong>{avg_corr_uk:.2f}</strong> vs GBP/USD → UK CPI =
+<strong>{avg_bilateral_uk:.2f}</strong>. The dollar index wins in both corridors.
+<strong>DCP dominates PCP.</strong></p>
+</div>
+
+<div class="essay-p">
+My own research offers a specific, testable illustration of this dynamic. I documented an
+asymmetric inflation transmission chain running India → Singapore → UK: India's consumer
+price index Granger-causes Singapore's with a two-month lag (p = 0.028), and Singapore's
+leads the UK's (p = 0.039). When I first found this, the natural question was: why India,
+and why two months? The dominant currency paradigm offers the answer.
+</div>
+
+<div class="essay-p">
+India is a major commodity and food producer. When Indian supply conditions change — a drought,
+an energy shock, an agricultural disruption — dollar commodity prices move first. Singapore,
+which imports virtually everything and prices those imports in dollars, feels the shock
+approximately two months later when the shipments arrive and get priced into domestic CPI.
+The lag is not a monetary phenomenon. It is a supply chain phenomenon. And the dollar
+is the pipe.
+</div>
+
+<div class="essay-divider">🐾 · · · 🐾</div>
+
+<div class="essay-p">
+The policy implication is elegant and somewhat underappreciated. The Monetary Authority of
+Singapore manages the Singapore dollar against a trade-weighted basket — the S$NEER band.
+The dominant anchor in that basket is the US dollar. When MAS appreciates the S$NEER to fight
+inflation, it is strengthening the SGD against the dollar — directly offsetting the
+dollar-priced import cost surge. The instrument matches the channel exactly.
+</div>
+
+<div class="essay-p">
+This explains something that puzzled observers during the 2022 inflation surge: why did Singapore
+disinflate faster and more cleanly than the UK, even though both economies were exposed to
+the same global commodity shock? The Bank of England raised rates fourteen consecutive times,
+targeting domestic demand. MAS adjusted the exchange rate, targeting the import price channel.
+Both were responding to the same upstream pressure — but only one was addressing the actual
+transmission mechanism. MAS was managing its exposure to the dollar's shadow.
+The BoE was fighting the chaos without identifying the Pink Panther.
+</div>
+
+<div class="essay-pullquote">
+<p>"We put a green bow on the box. The box is still full of commodities.
+And somebody, somewhere upstream, is about to have a very good year."</p>
+<div class="pq-source">FROM "THE GREEN BOW ON THE SAME OLD BOX" · GOKHALE (2026)</div>
+</div>
+
+<div class="essay-p">
+The broader implication extends beyond Singapore. If dollar invoicing means that the dominant
+currency channel is the primary mechanism through which supply shocks transmit globally,
+then the relevant question for any central bank is not "what are domestic demand conditions
+doing?" but "what is the dollar doing to our import prices?" Small open economies that target
+exchange rates — Singapore, Switzerland, several ASEAN members — are structurally better
+positioned to answer that question, because their policy framework forces them to watch the
+dollar directly. Large economies with independent monetary policy and flexible exchange rates
+are watching the wrong variable.
+</div>
+
+<div class="essay-p">
+The climate transition adds a further layer. The green economy is rematerialising the world —
+lithium, cobalt, copper, rare earths replacing oil and gas as the critical upstream commodities.
+The new upstream economies are Chile, Congo, China. But they are still priced in dollars.
+The Pink Panther hasn't left the building. He's just wearing a different colour.
+</div>
+
+<div class="essay-p">
+The Pink Panther, meanwhile, keeps moving. Dollar commodity prices, dollar trade invoices,
+dollar-denominated debt — the dominant currency is already in the next scene before anyone
+has finished investigating the last one. The question is not whether to watch it.
+It is whether your framework is even designed to look in the right direction.
+</div>
+
+<div class="essay-byline" style="border-top:1px solid var(--border);border-bottom:none;padding-top:20px;padding-bottom:0;margin-top:32px;">
+ANUJA A. GOKHALE &nbsp;·&nbsp; SSRN.COM/ABSTRACT=6514338 &nbsp;·&nbsp;
+MONSOON-INDEX.STREAMLIT.APP &nbsp;·&nbsp; ANUJAGOKHALE.GITHUB.IO
+</div>
+
+</div>
+""".format(avg_corr_sg=avg_corr_sg, avg_bilateral_sg=avg_bilateral_sg,
+           avg_corr_uk=avg_corr_uk, avg_bilateral_uk=avg_bilateral_uk),
+    unsafe_allow_html=True)
