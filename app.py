@@ -347,6 +347,28 @@ def rolling_correlation(series1, series2, window=24, lag=2):
     return pd.DataFrame(results).set_index("date")
 
 
+@st.cache_data
+def get_bilateral_rates():
+    """SGD/USD and GBP/USD bilateral rates — calibrated to historical data."""
+    dates = pd.date_range("2012-01-01", "2025-09-01", freq="MS")
+    np.random.seed(99)
+    sgd_targets = {2012:1.25,2013:1.26,2014:1.32,2015:1.41,2016:1.44,
+                   2017:1.38,2018:1.37,2019:1.36,2020:1.38,2021:1.35,
+                   2022:1.42,2023:1.34,2024:1.34,2025:1.33}
+    sgd, v = [], 1.25
+    for d in dates:
+        v = v + 0.12*(sgd_targets.get(d.year,1.36) - v) + np.random.normal(0,0.008)
+        sgd.append(round(max(1.20,min(1.50,v)),4))
+    gbp_targets = {2012:1.59,2013:1.56,2014:1.65,2015:1.53,2016:1.36,
+                   2017:1.29,2018:1.33,2019:1.28,2020:1.28,2021:1.38,
+                   2022:1.24,2023:1.24,2024:1.27,2025:1.29}
+    gbp, v = [], 1.59
+    for d in dates:
+        v = v + 0.10*(gbp_targets.get(d.year,1.32) - v) + np.random.normal(0,0.012)
+        gbp.append(round(max(1.15,min(1.75,v)),4))
+    return pd.DataFrame({"SGD/USD": sgd, "GBP/USD": gbp}, index=dates)
+
+
 # ── LOAD DATA ─────────────────────────────────────────────────────────────────
 dxy = get_dxy_data()
 commodities = get_commodity_data()
@@ -842,30 +864,3 @@ dollar-invoiced import price surges. The instrument doesn't match the channel.
     st.markdown("---")
     st.caption("""Built by Anuja A. Gokhale · MA Applied Economics, NUS (Merit Scholar)
     · anujagokhale1604@gmail.com · ssrn.com/abstract=6514338 · monsoon-index.streamlit.app""")
-
-# ── PATCH: Add DCP vs PCP toggle data ────────────────────────────────────────
-# This runs at module level so it's available in the transmission tab patch below
-@st.cache_data
-def get_bilateral_rates():
-    """SGD/USD and GBP/USD bilateral rates — calibrated to historical data."""
-    dates = pd.date_range("2012-01-01", "2025-09-01", freq="MS")
-    np.random.seed(99)
-    # SGD/USD (inverted — higher = stronger SGD)
-    sgd_targets = {2012:1.25,2013:1.26,2014:1.32,2015:1.41,2016:1.44,
-                   2017:1.38,2018:1.37,2019:1.36,2020:1.38,2021:1.35,
-                   2022:1.42,2023:1.34,2024:1.34,2025:1.33}
-    sgd, v = [], 1.25
-    for d in dates:
-        v = v + 0.12*(sgd_targets.get(d.year,1.36) - v) + np.random.normal(0,0.008)
-        sgd.append(round(max(1.20,min(1.50,v)),4))
-
-    # GBP/USD
-    gbp_targets = {2012:1.59,2013:1.56,2014:1.65,2015:1.53,2016:1.36,
-                   2017:1.29,2018:1.33,2019:1.28,2020:1.28,2021:1.38,
-                   2022:1.24,2023:1.24,2024:1.27,2025:1.29}
-    gbp, v = [], 1.59
-    for d in dates:
-        v = v + 0.10*(gbp_targets.get(d.year,1.32) - v) + np.random.normal(0,0.012)
-        gbp.append(round(max(1.15,min(1.75,v)),4))
-
-    return pd.DataFrame({"SGD/USD": sgd, "GBP/USD": gbp}, index=dates)
