@@ -1014,7 +1014,7 @@ The lag is not a monetary phenomenon. It is a supply chain phenomenon. And the d
 is the pipe.
 </div>
 
-<div class="essay-divider">&middot; &middot; &middot;</div>
+<div class="essay-divider">&#x1F43E; &nbsp; &middot; &nbsp; &#x1F43E; &nbsp; &middot; &nbsp; &#x1F43E;</div>
 
 <div class="essay-p">
 The policy implication is elegant and somewhat underappreciated. The Monetary Authority of
