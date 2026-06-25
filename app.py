@@ -966,7 +966,7 @@ DXY → UK CPI = <strong>{avg_corr_uk:.2f}</strong> vs GBP/USD → UK CPI =
 <div class="essay-byline">ANUJA A. GOKHALE &nbsp;&middot;&nbsp; MA APPLIED ECONOMICS, NUS (MERIT SCHOLAR) &nbsp;&middot;&nbsp; SSRN.COM/ABSTRACT=6514338</div>
 
 <div class="essay-pullquote">
-<p>"DXY correlation with downstream CPI consistently exceeds bilateral exchange rate correlation &mdash;
+<p>"DXY correlation with downstream CPI consistently exceeds bilateral exchange rate correlation,
 consistent with Gopinath's Dominant Currency Paradigm. The dollar is not a bystander.
 It is the mechanism."</p>
 <div class="pq-source">DCP TEST &nbsp;&middot;&nbsp; THIS DASHBOARD &nbsp;&middot;&nbsp; ROLLING 24M WINDOW</div>
@@ -974,10 +974,10 @@ It is the mechanism."</p>
 
 <div class="essay-p">
 The Pink Panther has a talent for causing chaos without anyone realising he was there.
-He bumbles through the scene, knocks everything over, and disappears &mdash; leaving investigators
+He bumbles through the scene, knocks everything over, and disappears, leaving investigators
 pointing fingers at everyone except the actual culprit. The US dollar has a similar gift.
 It moves through every commodity market, every trade invoice, every import contract on the planet,
-setting prices as it goes &mdash; and when inflation arrives, nobody thinks to check what the dollar
+setting prices as it goes. And when inflation arrives, nobody thinks to check what the dollar
 was doing.
 </div>
 
@@ -987,7 +987,7 @@ Gita Gopinath in a landmark 2020 paper: most international trade is invoiced in 
 regardless of whether the buyer or seller has anything to do with America. When India sells
 commodities to Singapore, the price is set in dollars. When Singapore buys electronics from
 Vietnam, again dollars. The bilateral exchange rate between the rupee and the Singapore dollar
-barely matters. What matters is each country's relationship with the dollar &mdash; and the dollar's
+barely matters. What matters is each country's relationship with the dollar, and the dollar's
 relationship with global commodity prices.
 </div>
 """, unsafe_allow_html=True)
@@ -1006,21 +1006,21 @@ and why two months? The dominant currency paradigm offers the answer.
 </div>
 
 <div class="essay-p">
-India is a major commodity and food producer. When Indian supply conditions change &mdash; a drought,
-an energy shock, an agricultural disruption &mdash; dollar commodity prices move first. Singapore,
+India is a major commodity and food producer. When Indian supply conditions change (a drought,
+an energy shock, an agricultural disruption), dollar commodity prices move first. Singapore,
 which imports virtually everything and prices those imports in dollars, feels the shock
 approximately two months later when the shipments arrive and get priced into domestic CPI.
 The lag is not a monetary phenomenon. It is a supply chain phenomenon. And the dollar
 is the pipe.
 </div>
 
-<div class="essay-divider">&#x1F43E; &middot; &middot; &middot; &#x1F43E;</div>
+<div class="essay-divider">&middot; &middot; &middot;</div>
 
 <div class="essay-p">
 The policy implication is elegant and somewhat underappreciated. The Monetary Authority of
-Singapore manages the Singapore dollar against a trade-weighted basket &mdash; the S$NEER band.
+Singapore manages the Singapore dollar against a trade-weighted basket, the S$NEER band.
 The dominant anchor in that basket is the US dollar. When MAS appreciates the S$NEER to fight
-inflation, it is strengthening the SGD against the dollar &mdash; directly offsetting the
+inflation, it is strengthening the SGD against the dollar, directly offsetting the
 dollar-priced import cost surge. The instrument matches the channel exactly.
 </div>
 
@@ -1029,7 +1029,7 @@ This explains something that puzzled observers during the 2022 inflation surge: 
 disinflate faster and more cleanly than the UK, even though both economies were exposed to
 the same global commodity shock? The Bank of England raised rates fourteen consecutive times,
 targeting domestic demand. MAS adjusted the exchange rate, targeting the import price channel.
-Both were responding to the same upstream pressure &mdash; but only one was addressing the actual
+Both were responding to the same upstream pressure, but only one was addressing the actual
 transmission mechanism. MAS was managing its exposure to the dollar's shadow.
 The BoE was fighting the chaos without identifying the Pink Panther.
 </div>
@@ -1045,14 +1045,14 @@ The broader implication extends beyond Singapore. If dollar invoicing means that
 currency channel is the primary mechanism through which supply shocks transmit globally,
 then the relevant question for any central bank is not &ldquo;what are domestic demand conditions
 doing?&rdquo; but &ldquo;what is the dollar doing to our import prices?&rdquo; Small open economies that target
-exchange rates &mdash; Singapore, Switzerland, several ASEAN members &mdash; are structurally better
+exchange rates (Singapore, Switzerland, several ASEAN members) are structurally better
 positioned to answer that question, because their policy framework forces them to watch the
 dollar directly. Large economies with independent monetary policy and flexible exchange rates
 are watching the wrong variable.
 </div>
 
 <div class="essay-p">
-The climate transition adds a further layer. The green economy is rematerialising the world &mdash;
+The climate transition adds a further layer. The green economy is rematerialising the world:
 lithium, cobalt, copper, rare earths replacing oil and gas as the critical upstream commodities.
 The new upstream economies are Chile, Congo, China. But they are still priced in dollars.
 The Pink Panther hasn't left the building. He's just wearing a different colour.
@@ -1060,7 +1060,7 @@ The Pink Panther hasn't left the building. He's just wearing a different colour.
 
 <div class="essay-p">
 The Pink Panther, meanwhile, keeps moving. Dollar commodity prices, dollar trade invoices,
-dollar-denominated debt &mdash; the dominant currency is already in the next scene before anyone
+dollar-denominated debt: the dominant currency is already in the next scene before anyone
 has finished investigating the last one. The question is not whether to watch it.
 It is whether your framework is even designed to look in the right direction.
 </div>
