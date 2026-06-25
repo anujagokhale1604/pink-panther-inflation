@@ -1066,8 +1066,10 @@ It is whether your framework is even designed to look in the right direction.
 </div>
 
 <div class="essay-byline" style="border-top:1px solid #2A2A2A;border-bottom:none;padding-top:20px;padding-bottom:0;margin-top:32px;">
-ANUJA A. GOKHALE &nbsp;&middot;&nbsp; SSRN.COM/ABSTRACT=6514338 &nbsp;&middot;&nbsp;
-MONSOON-INDEX.STREAMLIT.APP &nbsp;&middot;&nbsp; ANUJAGOKHALE.GITHUB.IO
+ANUJA A. GOKHALE &nbsp;&middot;&nbsp;
+<a href="https://ssrn.com/abstract=6514338" target="_blank" style="color:#FF2D78;text-decoration:none;">SSRN.COM/ABSTRACT=6514338</a> &nbsp;&middot;&nbsp;
+<a href="https://monsoon-index.streamlit.app" target="_blank" style="color:#FF2D78;text-decoration:none;">MONSOON-INDEX.STREAMLIT.APP</a> &nbsp;&middot;&nbsp;
+<a href="https://anujagokhale.github.io" target="_blank" style="color:#FF2D78;text-decoration:none;">ANUJAGOKHALE.GITHUB.IO</a>
 </div>
 </div>
 """, unsafe_allow_html=True)
