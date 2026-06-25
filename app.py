@@ -329,12 +329,15 @@ def get_cpi_data():
 
 @st.cache_data
 def rolling_correlation(series1, series2, window=24, lag=2):
-    """Rolling correlation between lagged series1 and series2."""
-    s1_lagged = series1.shift(lag)
+    """Rolling correlation between lagged pct change of series1 and series2."""
+    # Use pct change to capture co-movement direction
+    s1_pct = series1.pct_change() * 100
+    s2_pct = series2.pct_change() * 100
+    s1_lagged = s1_pct.shift(lag)
     results = []
     for i in range(window, len(series1)):
         s1_w = s1_lagged.iloc[i-window:i]
-        s2_w = series2.iloc[i-window:i]
+        s2_w = s2_pct.iloc[i-window:i]
         valid = (~s1_w.isna()) & (~s2_w.isna())
         if valid.sum() > 10:
             corr = np.corrcoef(s1_w[valid], s2_w[valid])[0,1]
@@ -466,9 +469,9 @@ with t1:
                       legend=dict(orientation="h", y=-0.18, x=0.5, xanchor="center",
                                   bgcolor="rgba(0,0,0,0)", font=dict(size=12, color="#F0EDE8")))
     fig.update_yaxes(title_text="DXY", gridcolor="#2A2A2A", secondary_y=False,
-                     tickfont=dict(color="#F0EDE8"))
+                     tickfont=dict(color="#F0EDE8"), range=[70, 120])
     fig.update_yaxes(title_text="CPI YoY (%)", gridcolor="#2A2A2A", secondary_y=True,
-                     tickfont=dict(color="#F0EDE8"))
+                     tickfont=dict(color="#F0EDE8"), range=[-2, 12])
     fig.update_xaxes(gridcolor="#2A2A2A", tickfont=dict(color="#F0EDE8"))
     st.plotly_chart(fig, use_container_width=True)
     st.caption("DXY left axis. CPI right axis. Dollar strength leads downstream inflation — the shadow precedes the price.")
